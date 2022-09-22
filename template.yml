@@ -1,0 +1,22 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: 'rtdata Han list generate ruby application'
+
+Resources:
+  RTDataHanListGen:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: YahooRTDataHanListGen
+      Handler: lib/generate_list.run
+      Runtime: ruby2.7
+      Policies:
+      Environment:
+      Role: arn:aws:iam::006077509176:role/RTDataHanListGen
+
+Outputs:
+  RTDataHanListGen:
+    Description: RTDataHanListGen Lambda Function ARN
+    Value:
+      Fn::GetAtt:
+      - RTDataHanListGen
+      - Arn

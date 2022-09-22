@@ -1,0 +1,1 @@
+sam package --template-file template.yml --s3-bucket yahoo-han-list-gen-deploy --output-template-file packaged-template.yml
